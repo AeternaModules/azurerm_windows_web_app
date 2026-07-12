@@ -1,3 +1,7 @@
+output "windows_web_apps_id" {
+  description = "Map of id values across all windows_web_apps, keyed the same as var.windows_web_apps"
+  value       = { for k, v in azurerm_windows_web_app.windows_web_apps : k => v.id }
+}
 output "windows_web_apps_app_settings" {
   description = "Map of app_settings values across all windows_web_apps, keyed the same as var.windows_web_apps"
   value       = { for k, v in azurerm_windows_web_app.windows_web_apps : k => v.app_settings }
